@@ -14,9 +14,18 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://takikat.github.io/CV/",
+            "branch": "gh-pages",
+            "dir": "dist/my-cv/browser"
+          }
+        },
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/my-cv",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
