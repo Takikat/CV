@@ -1,0 +1,45 @@
+@import "../../../../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-side {
+  padding-right: calc(50% - 564px);
+
+  img {
+    width: 500px;
+  }
+}
+
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 20px;
+
+  .text {
+    font-size: 1.5rem;
+    color: @text-color;
+    font-weight: 400;
+  }
+
+  .name {
+    font-size: 3rem;
+    font-weight: 700;
+    background-size: 200% 100%;
+    color: @primary-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s linear infinite;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: @primary-color;
+  }
+}
