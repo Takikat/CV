@@ -8,6 +8,9 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -46,8 +49,21 @@
               }
             ],
             "styles": [
-              "src/styles.less"
-            ]
+              "src/styles.less",
+              {
+                "input": "src/styles/default.less",
+                "bundleName": "default",
+                "inject": false
+              },
+              {
+                "input": "src/styles/dark.less",
+                "bundleName": "dark",
+                "inject": false
+              }
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles/themes"]
+            }
           },
           "configurations": {
             "production": {

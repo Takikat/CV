@@ -10,11 +10,25 @@ nz-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #001529;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  background: var(--background-color);
   height: 112px;
   padding: 0 38px;
   border-radius: 24px;
   margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+
+ul[nz-menu] {
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  border-bottom: 0;
+}
+
+.item {
+  transition: color 0.3s ease, background-color 0.3s ease;
+  color: var(--text-color);
 }
 
 .logo {
