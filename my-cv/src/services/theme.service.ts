@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-enum ThemeType {
+export enum ThemeType {
   dark = 'dark',
   default = 'default',
 }
@@ -58,6 +58,11 @@ export class ThemeService {
 
   public toggleTheme(): Promise<Event> {
     this.currentTheme = this.reverseTheme(this.currentTheme);
+    return this.loadTheme(false);
+  }
+
+  public setTheme(type: ThemeType): Promise<Event> {
+    this.currentTheme = type;
     return this.loadTheme(false);
   }
 }
