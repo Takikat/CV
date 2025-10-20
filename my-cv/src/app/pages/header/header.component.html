@@ -3,8 +3,8 @@
     <div class="logo gradient-text">Quentin WESSER</div>
     <div class="right-part">
       <ul nz-menu nzMode="horizontal">
-        <li nz-menu-item class="item">Home</li>
-        <li nz-menu-item class="item">About</li>
+        <li nz-menu-item [nzSelected]="activeAnchor() == 'home'" (click)="onGoTo('home')" class="item">Home</li>
+        <li nz-menu-item [nzSelected]="activeAnchor() == 'about'" (click)="onGoTo('about')" class="item">About</li>
         <li nz-menu-item class="item">Contact</li>
       </ul>
       <nz-switch [ngModel]="darkTheme()" (click)="onSwitch()" nzCheckedChildren="Light" nzUnCheckedChildren="Dark"></nz-switch>

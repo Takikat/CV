@@ -2,10 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { HeaderComponent } from './pages/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ThemeService } from '../services/theme.service';
+import { AboutComponent } from './pages/about/about.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ HeaderComponent, HomeComponent ],
+  imports: [ HeaderComponent, HomeComponent, AboutComponent ],
   templateUrl: './app.html',
   styleUrl: './app.less'
 })
