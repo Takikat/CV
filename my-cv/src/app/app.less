@@ -6,10 +6,10 @@ header {
   z-index: 1000;    /* Ensures it’s on top of other elements */
 }
 
-body {
+main {
   padding-top: 148px;
   background-color: var(--background-color);
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   min-height: 100%;
 }
 
@@ -17,22 +17,22 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  padding-left: 7%;
-  width: 86%;
+  padding: 0 7%;
+  width: 100%;
   margin: 20px 0;
 
   span {
     font-weight: 700;
     font-size: 48px;
     color: var(--secondary-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   }
 
   &::before, &::after {
     content: '';
     flex: 1;
     border-bottom: 2px solid var(--divider);
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   }
 
   &:not(:empty)::before { margin-right: .75em; }

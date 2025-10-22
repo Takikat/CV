@@ -2,15 +2,19 @@
   <app-header/>
 </header>
 <main>
-  <body>
-    <section id="home">
-      <app-home/>
-    </section>
-    <div class="divider">
-      <span>About me</span>
+  <section id="accueil">
+    <app-home/>
+  </section>
+  <section id="a-propos">
+    <div dividerAnimate class="divider">
+      <span>À propos</span>
     </div>
-    <section id="about">
-      <app-about/>
-    </section>
-  </body>
+    <app-about/>
+  </section>
+  <section id="experience">
+    <div dividerAnimate class="divider">
+      <span>Expérience</span>
+    </div>
+    <app-work-experience/>
+  </section>
 </main>

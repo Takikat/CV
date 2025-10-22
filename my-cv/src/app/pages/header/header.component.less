@@ -10,7 +10,7 @@ nz-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   background: var(--component-background-color);
   height: 112px;
   padding: 0 38px;
@@ -26,8 +26,12 @@ ul[nz-menu] {
   border-bottom: 0;
 }
 
+button {
+  font-weight: 500;
+}
+
 li[nz-menu-item] {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   color: var(--text-color);
 }
 

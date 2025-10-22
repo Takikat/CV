@@ -30,14 +30,14 @@
     font-size: 20px;
     font-weight: 650;
     color: var(--inside-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   }
 
   .round {
     width: 120px;
     aspect-ratio: 1 / 1;
     background-color: var(--border-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@
 
     nz-icon {
       color: var(--inside-color);
-      transition: color 0.3s ease, background-color 0.3s ease;
+      transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
     }
   }
 }
@@ -56,35 +56,19 @@
   flex-direction: column;
   margin: 20px 20px 20px 70px;
 
-  .intro {
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--secondary-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
-    margin-bottom: -10px;
-  }
-
-  .name {
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--primary-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
-    margin-bottom: -12px;
-  }
-
-  .title {
+  h1 {
     font-size: 30px;
     font-weight: 700;
     color: var(--primary-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
     margin-bottom: 20px;
   }
 
-  .text {
+  p {
     font-size: 20px;
     font-weight: 400;
     color: var(--text-light-color);
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   }
 }
 
@@ -94,6 +78,6 @@
   margin: 10% 0;
   width: 3px;
   background-color: var(--divider);
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.8s ease-out, transform 0.8s ease-out;;
   border-radius: 6px;
 }

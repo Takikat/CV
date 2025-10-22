@@ -8,3 +8,77 @@
 
 // @primary-color: #1890ff;
 /* You can add global styles to this file, and also import other style files */
+
+button {
+  background-color: transparent;
+  border: transparent;
+
+  &:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    border-radius: 8px;
+  }
+}
+
+[scrollAnimate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[imageAnimate] {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.fast-transistion {
+    transition: opacity 0.8s ease-out, transform 0.3s ease-out;
+  }
+
+}
+
+[dividerAnimate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.animate-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid var(--divider);
+    transform: scaleX(0);
+    transition: transform 0.8s ease-out;
+  }
+
+  &::before {
+    transform-origin: right;
+  }
+
+  &::after {
+    transform-origin: left;
+  }
+
+  &.animate-bars::before,
+  &.animate-bars::after {
+    transform: scaleX(1);
+  }
+}

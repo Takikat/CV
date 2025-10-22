@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -17,13 +17,13 @@ import { ThemeService, ThemeType } from '../../../services/theme.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less']
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
 
   themeService = inject(ThemeService);
 
   darkTheme = signal<boolean>(false);
 
-  activeAnchor= signal<string>('home');
+  activeAnchor= signal<string>('accueil');
 
   ngAfterViewInit() {
     const sections = document.querySelectorAll('section');
@@ -31,7 +31,10 @@ export class HeaderComponent {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            this.activeAnchor.set(entry.target.id);
+            const section = entry.target.id;
+            if (['accueil', 'a-propos', 'experience'].includes(section)) {
+              this.activeAnchor.set(section);
+            }
           }
         });
       },
@@ -42,11 +45,6 @@ export class HeaderComponent {
     );
 
     sections.forEach(section => observer.observe(section));
-  }
-
-  onSwitch() {
-    this.darkTheme.update(theme => !theme);
-    this.themeService.setTheme(this.darkTheme().valueOf() ? ThemeType.dark : ThemeType.default ).then();
   }
 
   onGoTo(anchor: string) {
@@ -60,5 +58,10 @@ export class HeaderComponent {
         behavior: 'smooth' // smooth scroll
       });
     }
+  }
+
+  onChange(activate: boolean) {
+    this.darkTheme.set(activate);
+    this.themeService.setTheme(this.darkTheme().valueOf() ? ThemeType.dark : ThemeType.default ).then();
   }
 }

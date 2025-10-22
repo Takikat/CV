@@ -62,7 +62,9 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles/themes"]
+              "includePaths": [
+                "src/styles/themes"
+              ]
             }
           },
           "configurations": {
@@ -119,11 +121,23 @@
               "src/styles.less"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
